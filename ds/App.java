@@ -18,6 +18,10 @@ public class App {
         System.out.println(list.remove(1));
         System.out.println(list.remove(2));
         System.out.println(list.remove(3));
+
+        list.append(2);
+        list.popLast();
+
         System.out.println(list);
     }
 }

@@ -342,13 +342,15 @@ public class MyLinkedList<T> implements MyList<T> {
             var delete = data;
             if (data == head.data) {
                 return popFront();
-            }
-            if (data == tail.data) {
+            } else if (data == tail.data) {
                 return popLast();
+            } else {
+                var prev = previousNode(data);
+                prev.next = prev.next.next;
+                size--;
+                return delete;
             }
-            var prev = previousNode(data);
-            prev.next = prev.next.next;
-            return delete;
+
         }
         return null;
     }
