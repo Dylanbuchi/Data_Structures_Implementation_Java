@@ -25,4 +25,5 @@ public interface MyList<T> {
 
     int size();
 
+    T remove(T data);
 }
