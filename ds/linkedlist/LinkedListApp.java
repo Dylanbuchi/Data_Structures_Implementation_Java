@@ -1,6 +1,6 @@
 package linkedlist;
 
-public class App {
+public class LinkedListApp {
 
     public static void main(String[] args) {
         MyList<Integer> list = new MyLinkedList<>();

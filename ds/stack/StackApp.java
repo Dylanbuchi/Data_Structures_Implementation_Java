@@ -1,11 +1,12 @@
 package stack;
 
-public class App {
+public class StackApp {
     public static void main(String[] args) {
 
         MyStack<Integer> stack = new MyStack<>();
 
         System.out.println("is empty: " + stack.isEmpty());
+        System.out.println(stack.pop());
 
         stack.push(1);
         stack.push(2);
