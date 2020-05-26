@@ -4,13 +4,6 @@ public class LinkedListApp {
 
     public static void main(String[] args) {
         MyList<Integer> list = new MyLinkedList<>();
-        MyLinkedList<Integer> list2 = new MyLinkedList<>();
-
-        // list2.append(1);
-        // list2.append(2);
-        // list2.append(3);
-
-        // list2.printReversed();
 
         list.append(1);
         list.append(2);
