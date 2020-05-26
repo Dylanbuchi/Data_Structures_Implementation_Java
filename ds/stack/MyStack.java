@@ -1,43 +1,96 @@
 package stack;
 
-import linkedlist.MyLinkedList;
-
 public class MyStack<T> {
 
-    private MyLinkedList<T> stack;
+    private static class Node<T> {
+        private Node<T> next;
+        private T data;
+
+        private Node(T data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+
+    private Node<T> front;
+
+    private int size;
 
     public MyStack() {
         super();
-        this.stack = new MyLinkedList<>();
+        this.front = null;
+        this.size = 0;
 
     }
 
     public T peek() {
-        return stack.peekFront();
+        if (isEmpty()) {
+            isEmptyMessage();
+            return null;
+        }
+        return front.data;
     }
 
     public void push(T data) {
-        stack.addFront(data);
+        var node = new Node<>(data);
+        if (isEmpty()) {
+            front = node;
+
+        } else {
+            node.next = front;
+            front = node;
+
+        }
+
+        size++;
+
+    }
+
+    private void isEmptyMessage() {
+
+        System.out.println("Stack is empty!");
 
     }
 
     public T pop() {
+        if (isEmpty()) {
+            isEmptyMessage();
+            return null;
 
-        return stack.popFront();
+        } else {
+            T delete = front.data;
+            front = front.next;
+            size--;
+            return delete;
+
+        }
+
     }
 
     public int size() {
-        return stack.size();
+        return size;
     }
 
     @Override
     public String toString() {
+        if (isEmpty()) {
+            return "[]";
+        }
+        var temp = front;
+        StringBuilder sb = new StringBuilder();
 
-        return stack.toString();
+        while (temp != null) {
+
+            sb.append("\n [" + temp.data + "] ");
+
+            temp = temp.next;
+        }
+        return sb.toString();
     }
 
     public boolean isEmpty() {
 
-        return stack.isEmpty();
+        return front == null;
     }
+
 }

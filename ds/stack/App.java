@@ -7,9 +7,10 @@ public class App {
 
         System.out.println("is empty: " + stack.isEmpty());
 
-        for (int i = 2; i <= 20; i *= 2) {
-            stack.push(i);
-        }
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        stack.push(4);
 
         System.out.println("size: " + stack.size());
 
