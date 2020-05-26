@@ -1,3 +1,4 @@
+package linkedlist;
 
 public class MyLinkedList<T> implements MyList<T> {
 
@@ -54,14 +55,14 @@ public class MyLinkedList<T> implements MyList<T> {
             try {
                 throw new Exception("The list is Empty");
             } catch (Exception e) {
-
-                e.printStackTrace();
+                System.out.println(e.getMessage());
             }
         }
     }
 
     @Override
     public T popFront() {
+
         isEmptyException();
 
         T delete = head.data;
