@@ -2,19 +2,19 @@ package queue.array;
 
 import java.util.Arrays;
 
-public class MyArrayQueue<T> {
+public class MyQueueArray<T> {
     private T[] queue;
     private int size;
     private int back;
     private int front;
 
-    public MyArrayQueue(int startingSize) {
+    public MyQueueArray(int startingSize) {
         this();
         this.queue = (T[]) new Object[startingSize];
 
     }
 
-    public MyArrayQueue() {
+    public MyQueueArray() {
         super();
         this.size = 0;
         this.front = 0;

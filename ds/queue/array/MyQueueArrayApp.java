@@ -1,9 +1,9 @@
 package queue.array;
 
-public class MyArrayQueueApp {
+public class MyQueueArrayApp {
     public static void main(String[] args) {
 
-        MyArrayQueue<Integer> queue = new MyArrayQueue<>();
+        MyQueueArray<Integer> queue = new MyQueueArray<>();
 
         System.out.println("is empty: " + queue.isEmpty());
 
