@@ -2,16 +2,18 @@ package queue.array;
 
 import java.util.Arrays;
 
+@SuppressWarnings("unchecked")
+
 public class MyQueueArray<T> {
     private T[] queue;
     private int size;
     private int back;
     private int front;
+    private int startingSize;
 
     public MyQueueArray(int startingSize) {
         this();
-        this.queue = (T[]) new Object[startingSize];
-
+        this.startingSize = startingSize;
     }
 
     public MyQueueArray() {
@@ -19,7 +21,8 @@ public class MyQueueArray<T> {
         this.size = 0;
         this.front = 0;
         this.back = -1;
-        this.queue = (T[]) new Object[10];
+        this.startingSize = 10;
+        this.queue = (T[]) new Object[startingSize];
 
     }
 
@@ -84,4 +87,5 @@ public class MyQueueArray<T> {
 
         return Arrays.toString(array);
     }
+
 }

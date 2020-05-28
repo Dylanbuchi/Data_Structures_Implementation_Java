@@ -5,6 +5,8 @@ import java.util.Arrays;
 /**
  * MyArrayStack
  */
+@SuppressWarnings("unchecked")
+
 public class MyStackArray<T> {
 
     private T[] stack;
