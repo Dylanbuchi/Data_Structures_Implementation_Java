@@ -1,6 +1,8 @@
-package linkedlist;
+package linkedlist.integerlist;
 
-public class MyIntegerLinkedList {
+import linkedlist.list.MySecondList;
+
+public class MyIntegerLinkedList implements MySecondList {
     private static class Node {
         Node next;
         int data;
@@ -166,24 +168,30 @@ public class MyIntegerLinkedList {
     }
 
     public void insert(int data, int index) {
-        if (index < 0 || index > size) {
+        if (index == 0) {
+            prepend(data);
+            return;
+        } else if (index < 0 || index >= size) {
             return;
         }
         var node = new Node(data);
-        if (isEmpty() || index == 0) {
-            prepend(data);
-            return;
-        }
-        var temp = head;
-        var prev = head;
-        while (index != 1) {
-            prev = temp;
-            temp = temp.next;
-            index--;
+        if (isEmpty()) {
+            head = tail = node;
+
+        } else {
+
+            var temp = head;
+            var prev = head;
+            while (index-- != 0) {
+                prev = temp;
+                temp = temp.next;
+
+            }
+
+            node.next = temp;
+            prev.next = node;
         }
 
-        node.next = temp;
-        prev.next = node;
         size++;
     }
 

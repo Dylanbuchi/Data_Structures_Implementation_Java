@@ -1,9 +1,9 @@
 package linkedlist;
 
-public class LinkedListApp {
+public class MyLinkedListApp {
 
     public static void main(String[] args) {
-        MyList<Integer> list = new MyLinkedList<>();
+        MyLinkedList<Integer> list = new MyLinkedList<>();
 
         list.append(1);
         list.append(2);
