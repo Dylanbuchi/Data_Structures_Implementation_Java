@@ -309,8 +309,8 @@ public class MyLinkedList<T> implements MyList<T> {
         return sb;
     }
 
-    private Node<T> reverse() {
-        Node<T> temp = head;
+    private Node<T> reverse(Node<T> temp) {
+
         Node<T> prev = null;
 
         Node<T> next = null;
@@ -327,7 +327,8 @@ public class MyLinkedList<T> implements MyList<T> {
     }
 
     public void printReversed() {
-        var temp = reverse();
+
+        var temp = reverse(head);
 
         while (temp != null) {
             System.out.print(temp.data + " -> ");
