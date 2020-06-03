@@ -1,4 +1,4 @@
-package linkedlist.list.circularlinkedlist;
+package ds.linkedlist.list.circularlinkedlist;
 
 public class CircularLinkedList {
     private static class Node {

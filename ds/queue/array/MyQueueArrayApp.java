@@ -1,4 +1,4 @@
-package queue.array;
+package ds.queue.array;
 
 public class MyQueueArrayApp {
     public static void main(String[] args) {

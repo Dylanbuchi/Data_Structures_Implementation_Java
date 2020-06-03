@@ -1,4 +1,4 @@
-package tree;
+package ds.tree;
 
 public class MyBinarySearchTree<T> {
 

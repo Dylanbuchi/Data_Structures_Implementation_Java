@@ -1,7 +1,7 @@
-package hashes;
+package ds.hashes;
 
 import jdk.jfr.DataAmount;
-import linkedlist.MyLinkedList;
+import ds.linkedlist.MyLinkedList;
 
 @SuppressWarnings("unchecked")
 

@@ -1,4 +1,4 @@
-package tree;
+package ds.tree;
 
 public class MyBinarySearchTreeApp {
     public static void main(String[] args) {

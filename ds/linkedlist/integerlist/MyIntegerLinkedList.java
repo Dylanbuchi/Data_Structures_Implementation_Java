@@ -1,6 +1,6 @@
-package linkedlist.integerlist;
+package ds.linkedlist.integerlist;
 
-import linkedlist.list.MySecondList;
+import ds.linkedlist.list.MySecondList;
 
 public class MyIntegerLinkedList implements MySecondList {
     private static class Node {

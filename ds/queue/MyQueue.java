@@ -1,4 +1,4 @@
-package queue;
+package ds.queue;
 
 public class MyQueue<T> {
     private static class Node<T> {

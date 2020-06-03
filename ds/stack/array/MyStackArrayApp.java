@@ -1,4 +1,4 @@
-package stack.array;
+package ds.stack.array;
 
 public class MyStackArrayApp {
     public static void main(String[] args) {

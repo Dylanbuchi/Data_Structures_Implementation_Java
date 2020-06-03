@@ -1,6 +1,6 @@
-package linkedlist;
+package ds.linkedlist;
 
-import linkedlist.list.MyList;
+import ds.linkedlist.list.MyList;
 
 public class MyLinkedList<T> implements MyList<T> {
 

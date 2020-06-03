@@ -1,4 +1,4 @@
-package linkedlist.list;
+package ds.linkedlist.list;
 
 public interface MySecondList {
 

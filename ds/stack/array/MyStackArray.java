@@ -1,4 +1,4 @@
-package stack.array;
+package ds.stack.array;
 
 import java.util.Arrays;
 

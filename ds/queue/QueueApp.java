@@ -1,4 +1,4 @@
-package queue;
+package ds.queue;
 
 public class QueueApp {
     public static void main(String[] args) {

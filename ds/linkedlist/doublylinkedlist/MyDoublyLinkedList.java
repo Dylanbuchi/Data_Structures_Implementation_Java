@@ -1,6 +1,6 @@
-package linkedlist.doublylinkedlist;
+package ds.linkedlist.doublylinkedlist;
 
-import linkedlist.list.MySecondList;
+import ds.linkedlist.list.MySecondList;
 
 /**
  * DoublyLinkedList
