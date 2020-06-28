@@ -1,4 +1,4 @@
-package ds2.interfaces;
+package ds.ds2.interfaces;
 
 public interface LList<T> {
 

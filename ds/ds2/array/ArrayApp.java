@@ -1,4 +1,4 @@
-package ds2.array;
+package ds.ds2.array;
 
 public class ArrayApp {
 

@@ -1,6 +1,6 @@
-package ds2.array;
+package ds.ds2.array;
 
-import ds2.interfaces.LList;
+import ds.ds2.interfaces.LList;
 
 /**
  * Array
