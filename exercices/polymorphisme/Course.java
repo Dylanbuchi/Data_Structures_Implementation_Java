@@ -1,6 +1,8 @@
 /*******************************************
  * Completez le programme a partir d'ici.
  *******************************************/
+package exercices.polymorphisme;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,25 +24,25 @@ class Vehicule {
         this("Anonyme", 130, 1000, 0);
     }
 
-    public  boolean estDeuxRoues(){
+    public boolean estDeuxRoues() {
         return false;
     }
 
-    public boolean meilleur(Vehicule autreVehicule){
+    public boolean meilleur(Vehicule autreVehicule) {
 
-       return performance() > autreVehicule.performance();
-       
+        return performance() > autreVehicule.performance();
+
     }
-    
+
     private double performance() {
         return vitesseMax / poids;
-        
+
     }
 
     @Override
     public String toString() {
 
-        return nom + " -> vitesse max = "+ vitesseMax + " km/h, poids = "+ poids +" kg";
+        return nom + " -> vitesse max = " + vitesseMax + " km/h, poids = " + poids + " kg";
     }
 
     public String getNom() {
@@ -73,19 +75,19 @@ class Voiture extends Vehicule {
     public Voiture(String categorie) {
         super();
         this.categorie = categorie;
-        
+
     }
 
     @Override
     public String toString() {
-        
+
         return super.toString() + ", Voiture de " + categorie;
     }
 
     public String getCategorie() {
         return categorie;
     }
-    
+
 }
 
 class Moto extends Vehicule {
@@ -105,29 +107,28 @@ class Moto extends Vehicule {
     @Override
     public boolean estDeuxRoues() {
         return !sidecar;
-       
+
     }
+
     public Moto() {
         super();
         this.sidecar = false;
-        
+
     }
 
-   @Override
-   public String toString() {
-      
-       return sidecar == true ? super.toString() + ", Moto, avec sidecar" :  super.toString() + ", Moto";
+    @Override
+    public String toString() {
+
+        return sidecar == true ? super.toString() + ", Moto, avec sidecar" : super.toString() + ", Moto";
     }
-  
+
 }
-
 
 abstract class Rallye {
     public abstract boolean check();
-}      
+}
 
-
-class GrandPrix extends Rallye{
+class GrandPrix extends Rallye {
 
     private List<Vehicule> vehicules;
 
@@ -135,29 +136,28 @@ class GrandPrix extends Rallye{
         this.vehicules = new ArrayList<>();
     }
 
-    public void run(int tours){
-        
-        if (!check()){
+    public void run(int tours) {
+
+        if (!check()) {
 
             System.out.println("Pas de Grand Prix\n");
             return;
         }
 
-       int index = 0;
-       Vehicule winner = new Vehicule();
-       boolean finished = false;
+        int index = 0;
+        Vehicule winner = new Vehicule();
+        boolean finished = false;
 
         for (Vehicule vehicule : vehicules) {
-          
 
-            if(vehicule.getCarburant() - tours  > 0) {
-             
-                if(vehicule.meilleur(vehicules.get(index+1))){
+            if (vehicule.getCarburant() - tours > 0) {
+
+                if (vehicule.meilleur(vehicules.get(index + 1))) {
                     winner = vehicule;
                     finished = true;
                 }
             }
-        
+
         }
 
         if (finished) {
@@ -166,34 +166,32 @@ class GrandPrix extends Rallye{
             System.out.println("Elimination de tous les vehicules\n");
         }
     }
-            
+
     @Override
     public boolean check() {
 
         for (Vehicule vehicule : vehicules) {
             if (vehicule instanceof Moto) {
-                if (vehicule.estDeuxRoues()){
+                if (vehicule.estDeuxRoues()) {
                     return false;
-                }                
-                
+                }
+
             }
         }
 
         return true;
     }
 
-    public void ajouter(Vehicule vehicule){
+    public void ajouter(Vehicule vehicule) {
         vehicules.add(vehicule);
 
     }
-     
+
 }
+
 /*******************************************
- * Ne pas modifier apres cette ligne
- * pour pr'eserver les fonctionnalit'es et
- * le jeu de test fourni.
- * Votre programme sera test'e avec d'autres
- * donn'ees.
+ * Ne pas modifier apres cette ligne pour pr'eserver les fonctionnalit'es et le
+ * jeu de test fourni. Votre programme sera test'e avec d'autres donn'ees.
  *******************************************/
 public class Course {
 
@@ -293,6 +291,6 @@ public class Course {
 
         System.out.println("Troisieme  course :");
         gp2.run(11);
-        //FIN PARTIE 4
+        // FIN PARTIE 4
     }
 }
