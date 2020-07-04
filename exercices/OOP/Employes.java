@@ -1,3 +1,4 @@
+package exercices.OOP;
 /*******************************************
  * Completez le programme a partir d'ici.
  *******************************************/

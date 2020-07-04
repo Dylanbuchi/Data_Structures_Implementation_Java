@@ -1,4 +1,4 @@
-package exercices.polymorphisme;
+package exercices.OOP;
 
 import java.util.ArrayList;
 

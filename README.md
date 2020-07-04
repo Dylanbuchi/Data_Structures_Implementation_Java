@@ -1,2 +1,4 @@
-# Java_Practice
+# Java Practice
 
+- ds (data structures)
+- exercices (OOP)
