@@ -1,4 +1,5 @@
 package exercices.OOP;
+
 import java.util.ArrayList;
 
 /*******************************************
@@ -9,13 +10,14 @@ class Position {
     private double x;
     private double y;
 
-    public Position(double x, double y){
+    public Position(double x, double y) {
         this.x = x;
         this.y = y;
 
     }
-    public Position(){
-       this(0, 0);
+
+    public Position() {
+        this(0, 0);
 
     }
 
@@ -29,11 +31,10 @@ class Position {
 
     @Override
     public String toString() {
-        
+
         return String.format("(%.1f, %.1f)", x, y);
     }
 }
-
 
 class Neurone {
 
@@ -97,8 +98,8 @@ class Neurone {
         return connexions.isEmpty()
                 ? String.format("Le neurone en position %s avec attenuation %.1f sans connexion\n", position,
                         attenuation)
-                : String.format("Le neurone en position %s avec attenuation %.1f en connexion avec\n", position, attenuation)
-                        + s;
+                : String.format("Le neurone en position %s avec attenuation %.1f en connexion avec\n", position,
+                        attenuation) + s;
 
     }
 
@@ -126,11 +127,11 @@ class Cerveau {
 
     private ArrayList<Neurone> cerveau;
 
-    public Cerveau(){
+    public Cerveau() {
         this.cerveau = new ArrayList<>();
     }
 
-    public int getNbNeurones(){
+    public int getNbNeurones() {
         return cerveau.size();
     }
 
@@ -139,70 +140,67 @@ class Cerveau {
 
     }
 
-    public void ajouterNeurone(Position pos, double attenuation){
+    public void ajouterNeurone(Position pos, double attenuation) {
         cerveau.add(new Neurone(pos, attenuation));
     }
 
-    public void ajouterNeuroneCumulatif(Position pos, double attenuation){
+    public void ajouterNeuroneCumulatif(Position pos, double attenuation) {
         cerveau.add(new NeuroneCumulatif(pos, attenuation));
     }
 
-    public void stimuler(int index, double stimulus){
+    public void stimuler(int index, double stimulus) {
         cerveau.get(index).recoitStimulus(stimulus);
 
     }
 
-    public double sonder(int index){
+    public double sonder(int index) {
         return cerveau.get(index).getSignal();
 
     }
 
-    public void creerConnexions(){
-        
+    public void creerConnexions() {
+
         int size = cerveau.size();
-		int i = 0;
-		
-		cerveau.get(i).connexions.add(cerveau.get(i + 1));
-		cerveau.get(i).connexions.add(cerveau.get(i + 2));
-		
-		i++;
-		
-		if (cerveau.size() != 0) {
+        int i = 0;
 
-			while (i  < size - 2) {
+        cerveau.get(i).connexions.add(cerveau.get(i + 1));
+        cerveau.get(i).connexions.add(cerveau.get(i + 2));
 
-				if (size >= i + 1) {
-					cerveau.get(i).connexions.add(cerveau.get(i + 1));
+        i++;
+
+        if (cerveau.size() != 0) {
+
+            while (i < size - 2) {
+
+                if (size >= i + 1) {
+                    cerveau.get(i).connexions.add(cerveau.get(i + 1));
                 }
-                
-				if (size >= i + 2) {
-					cerveau.get(i + 1).connexions.add(cerveau.get(i + 2));
+
+                if (size >= i + 2) {
+                    cerveau.get(i + 1).connexions.add(cerveau.get(i + 2));
                 }
-                
-				i += 2;
-			}
-			
-		}
+
+                i += 2;
+            }
+
+        }
     }
 
     public String toString() {
         String s = "Le cerveau contient " + cerveau.size() + " neurone(s)\n";
-        
-		for(Neurone neurone : cerveau) {
-			s+= neurone + "\n";
-        }
-        
-		return s;
-	}
 
+        for (Neurone neurone : cerveau) {
+            s += neurone + "\n";
+        }
+
+        return s;
+    }
 
 }
+
 /*******************************************
- * Ne pas modifier apres cette ligne
- * pour pr'eserver les fonctionnalit'es et
- * le jeu de test fourni.
- * Votre programme sera test'e avec d'autres
- * donn'ees.
+ * Ne pas modifier apres cette ligne pour pr'eserver les fonctionnalit'es et le
+ * jeu de test fourni. Votre programme sera test'e avec d'autres donn'ees.
  *******************************************/
 public class SimulateurNeurone {
 
@@ -232,7 +230,6 @@ public class SimulateurNeurone {
         System.out.println("Premiere connexion du neurone 1");
         System.out.println(neuron1.getConnexion(0));
 
-
         // FIN TEST DE LA PARTIE 1
 
         // TEST DE LA PARTIE 2
@@ -254,14 +251,14 @@ public class SimulateurNeurone {
         Cerveau cerveau = new Cerveau();
 
         // parametres de construction du neurone:
-        // la  position et le facteur d'attenuation
-        cerveau.ajouterNeurone(new Position(0,0), 0.5);
-        cerveau.ajouterNeurone(new Position(0,1), 0.2);
-        cerveau.ajouterNeurone(new Position(1,0), 1.0);
+        // la position et le facteur d'attenuation
+        cerveau.ajouterNeurone(new Position(0, 0), 0.5);
+        cerveau.ajouterNeurone(new Position(0, 1), 0.2);
+        cerveau.ajouterNeurone(new Position(1, 0), 1.0);
 
         // parametres de construction du neurone cumulatif:
-        // la  position et le facteur d'attenuation
-        cerveau.ajouterNeuroneCumulatif(new Position(1,1), 0.8);
+        // la position et le facteur d'attenuation
+        cerveau.ajouterNeuroneCumulatif(new Position(1, 1), 0.8);
         cerveau.creerConnexions();
         cerveau.stimuler(0, 10);
 
